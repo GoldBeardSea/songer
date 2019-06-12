@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SongerApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(SongerApplication.class, args);
 	}
 
