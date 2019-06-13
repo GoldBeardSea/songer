@@ -10,9 +10,14 @@ import java.util.List;
 @RestController
 public class SongerController {
 
+    @GetMapping("/")
+    public String helloWorldBase() {
+        return "Hello Base World";
+    }
+
     @GetMapping("/hello")
     public String helloWorld() {
-        return "Hello World";
+        return "Hello Base World";
     }
 
     @GetMapping("/capitalize/{string}")
