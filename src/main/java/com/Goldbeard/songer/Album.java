@@ -1,10 +1,8 @@
 package com.Goldbeard.songer;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Album {
@@ -17,6 +15,8 @@ public class Album {
     int songCount;
     int length;
     String imageUrl;
+    @OneToMany
+    List<Song> songs;
 
     public long getId() {
         return id;
@@ -62,12 +62,22 @@ public class Album {
         this.imageUrl = imageUrl;
     }
 
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
+    }
+
     public Album() {}
+
     public Album(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+
     }
 }
